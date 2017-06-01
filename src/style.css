@@ -1,0 +1,154 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #EAF2EA;
+}
+
+.container {
+  max-width: 1020px;
+  margin: 15px auto 40px;
+}
+
+h4 { /*Title*/
+  margin-top: 25px;
+  text-align: center;
+  color: #464846;
+}
+
+.canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px; 
+}
+
+/* Pie chart styles*/
+.pieCanvas {
+  display: block;
+  margin: 0 auto;
+}
+
+.pie-label-container {
+  text-align: center;
+}
+
+.pie-section-header {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.pieGroup {
+  cursor: pointer;
+}
+
+.pie-click-prompt {
+  margin-top: 0;
+  margin-bottom: 20px; 
+}
+
+.arc .arc-label {
+  font-size: 12px;
+}
+
+/* Data Tables */
+.table {
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+.table-map-data {
+  width: 400px;
+  margin: 0 auto;
+}
+
+/* U.S. Heat map Style */
+.section-4-root {
+  max-height: 700px;
+}
+
+.legend {
+	position:relative;
+  left:30px;
+	top:-520px;
+}
+
+.axis text {
+	font: 10px sans-serif;
+}
+
+.axis line, .axis path {
+	fill: none;
+	stroke: #000;
+}
+
+.heat-map-title-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.heat-map-title-container p {
+  margin: 0;
+  padding: 0;
+}
+
+.heat-map-title-container .item-one p {
+  line-height: 60px;
+  vertical-align: middle;
+}
+
+.heat-map-title-container .item-two-color-box {
+  background-color: #f1f1f1;
+  padding: 5px 15px; 
+  border-radius: 10px;
+}
+
+.heat-map-title-container .color-container {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.heat-map-title-container .color-container p {
+  padding-top: 5px;
+  padding-left: 3px;
+}
+
+.heat-map-title-container .color {
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
+}
+
+.heat-map-title-container .color-container .high {
+  background-color: #d73d32;
+}
+
+.heat-map-title-container .color-container .low {
+  background-color: #f7d8d6;
+}

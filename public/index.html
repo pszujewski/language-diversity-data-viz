@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Language diversity in the U.S.</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+  </head>
+
+  <body>
+
+    <h4>Visualizing linguistic diversity in the United States with D3.js</h4>
+
+    <div class="container">
+      <div id="tabs">
+        <ul>
+          <li><a href="#section-1">Horizontal Bar Chart</a></li>
+          <li><a href="#section-2">Vertical Bar Chart</a></li>
+          <li><a href="#section-3">Pie Charts</a></li>
+          <li><a href="#section-4">U.S. Heat Map</a></li>
+          <li><a href="#section-5">Data Table for Charts</a></li>
+          <li><a href="#section-6">Data Table for Map</a></li>
+        </ul>
+
+        <section class="tab-view" id="section-1">
+          <div class='section-1-root'>
+            <p class="section-header">
+              Languages spoken in the U.S. other than English (expressed as % of the total population)
+            </p>
+          </div>
+        </section>
+
+        <section class="tab-view" id="section-2">
+          <div class='section-2-root'>
+            <p class="section-header">
+              Languages spoken in the U.S. other than English (expressed as % of the total population)
+            </p>
+          </div>
+        </section>
+
+        <section class="tab-view" id="section-3">
+         <div class='section-3-root'></div>
+        </section>
+
+        <section class="tab-view" id="section-4">
+          <div class='heat-map-title-container'>
+            <div class='item-one'>
+              <p>Density of non-English speaking populations by state</p>
+            </div>
+            <div class='item-two-color-box'>
+              <div class='color-container'><div class='color high'></div><p>Highest % concentration</p></div>
+              <div class='color-container'><div class='color low'></div><p>Lowest % concentration</p></div>
+            </div>
+          </div>
+          <div class='section-4-root'></div>
+        </section>
+
+        <section class="tab-view" id="section-5">
+           <p class="section-header">Data Source: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4092008/table/T3/">U.S. NIH</a></p>
+          <table class="table table-bordered table-hover table-condensed">
+            <tbody>
+              <tr>
+                <td>Language</td>
+                <td>Total Speakers</td>
+                <td>% of the Population </td>
+                <td>Origin</td>
+              </tr>
+              <tr>
+                <td>English</td>
+                <td>228,285,377</td>
+                <td>79.7%</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>Non-English</td>
+                <td>58,266,345</td>
+                <td>20.3%</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>Spanish</td>
+                <td>36,149,240</td>
+                <td>12.6%</td>
+                <td>Europe/Americas</td>
+              </tr>
+              <tr>
+                <td>French</td>
+                <td>1,267,188</td>
+                <td>0.4%</td>
+                <td>Europe/Americas</td>
+              </tr>
+              <tr>
+                <td>German</td>
+                <td>1,102,804</td>
+                <td>0.4%</td>
+                <td>Europe/Americas</td>
+              </tr>
+              <tr>
+                <td>Russian</td>
+                <td>849,796</td>
+                <td>0.3%</td>
+                <td>Europe/Americas</td>
+              </tr>
+              <tr>
+                <td>Haitian Creole</td>
+                <td>696,163</td>
+                <td>0.2%</td>
+                <td>Europe/Americas</td>
+              </tr>
+              <tr>
+                <td>Portuguese</td>
+                <td>689,697</td>
+                <td>0.2%</td>
+                <td>Europe/Americas</td>
+              </tr>
+              <tr>
+                <td>Polish</td>
+                <td>583,427</td>
+                <td>0.2%</td>
+                <td>Europe/Americas</td>
+              </tr>
+              <tr>
+                <td>Chinese</td>
+                <td>2,633,123</td>
+                <td>0.9%</td>
+                <td>East/South Asia</td>
+              </tr>
+              <tr>
+                <td>Hindi/Urdu</td>
+                <td>2,088,057</td>
+                <td>0.7%</td>
+                <td>East/South Asia</td>
+              </tr>
+              <tr>
+                <td>Filipino</td>
+                <td>1,709,651</td>
+                <td>0.6%</td>
+                <td>East/South Asia</td>
+              </tr>
+              <tr>
+                <td>Vietnamese</td>
+                <td>1,338,309</td>
+                <td>0.5%</td>
+                <td>East/South Asia</td>
+              </tr>
+              <tr>
+                <td>Korean</td>
+                <td>1,124,994</td>
+                <td>0.4%</td>
+                <td>East/South Asia</td>
+              </tr>
+              <tr>
+                <td>Khmer, Hmong, Lao and related</td>
+                <td>748,896</td>
+                <td>0.3%</td>
+                <td>East/ South Asia</td>
+              </tr>
+              <tr>
+                <td>Arabic</td>
+                <td>819,678</td>
+                <td>0.3%</td>
+                <td>East/ South Asia</td>
+              </tr>
+              <tr>
+                <td>Persian (Farsi)</td>
+                <td>370,759</td>
+                <td>0.1%</td>
+                <td>East/ South Asia</td>
+              </tr>
+              <tr>
+                <td>Other Languages</td>
+                <td>3,992,328</td>
+                <td>1.4%</td>
+                <td>null</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="tab-view" id="section-6">
+          <p class="section-header">Data Source: <a href="https://www.census.gov/prod/2013pubs/acs-22.pdf">U.S. Census bureau</a></p>
+          <table class="table table-bordered table-hover table-condensed table-map-data">
+            <thead>
+              <tr>
+                <th title="Field #1">State</th>
+                <th title="Field #2">% Non-English Speaking at Home</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Alabama</td>
+                <td align="right">5.2%</td>
+              </tr>
+              <tr>
+                <td>Alaska</td>
+                <td align="right">16.6%</td>
+              </tr>
+            <tr>
+              <td>Arizona</td>
+              <td align="right">27.0%</td>
+            </tr>
+            <tr>
+              <td>Arkansas</td>
+              <td align="right">7.5%</td>
+            </tr>
+            <tr>
+              <td>California</td>
+              <td align="right">43.8%</td>
+            </tr>
+            <tr>
+              <td>Colorado</td>
+              <td align="right">16.7%</td>
+            </tr>
+            <tr>
+              <td>Connecticut</td>
+              <td align="right">21.4%</td>
+            </tr>
+            <tr>
+              <td>Delaware</td>
+              <td align="right">13.6%</td>
+            </tr>
+            <tr>
+              <td>Florida</td>
+              <td align="right">27.6%</td>
+            </tr>
+            <tr>
+              <td>Georgia</td>
+              <td align="right">13.3%</td>
+            </tr>
+            <tr>
+              <td>Hawaii</td>
+              <td align="right">25.2%</td>
+            </tr>
+            <tr>
+              <td>Idaho</td>
+              <td align="right">10.4%</td>
+            </tr>
+            <tr>
+              <td>Illinois</td>
+              <td align="right">22.7%</td>
+            </tr>
+            <tr>
+              <td>Indiana</td>
+              <td align="right">8.2%</td>
+            </tr>
+            <tr>
+              <td>Iowa</td>
+              <td align="right">7.3%</td>
+            </tr>
+            <tr>
+              <td>Kansas</td>
+              <td align="right">11.4%</td>
+            </tr>
+            <tr>
+              <td>Kentucky</td>
+              <td align="right">4.8%</td>
+            </tr>
+            <tr>
+              <td>Louisiana</td>
+              <td align="right">8.7%</td>
+            </tr>
+            <tr>
+              <td>Maine</td>
+              <td align="right">6.6%</td>
+            </tr>
+            <tr>
+              <td>Maryland</td>
+              <td align="right">16.7%</td>
+            </tr>
+            <tr>
+              <td>Massachusetts</td>
+              <td align="right">22.0%</td>
+            </tr>
+            <tr>
+              <td>Michigan</td>
+              <td align="right">9.1%</td>
+            </tr>
+            <tr>
+              <td>Minnesota</td>
+              <td align="right">10.8%</td>
+            </tr>
+            <tr>
+              <td>Mississippi</td>
+              <td align="right">3.8%</td>
+            </tr>
+            <tr>
+              <td>Missouri</td>
+              <td align="right">6.4%</td>
+            </tr>
+            <tr>
+              <td>Montana</td>
+              <td align="right">4.7%</td>
+            </tr>
+            <tr>
+              <td>Nebraska</td>
+              <td align="right">10.3%</td>
+            </tr>
+            <tr>
+              <td>Nevada</td>
+              <td align="right">29.7%</td>
+            </tr>
+            <tr>
+              <td>New Hampshire</td>
+              <td align="right">7.8%</td>
+            </tr>
+            <tr>
+              <td>New Jersey</td>
+              <td align="right">30.4%</td>
+            </tr>
+            <tr>
+              <td>New Mexico</td>
+              <td align="right">36.5%</td>
+            </tr>
+            <tr>
+              <td>New York</td>
+              <td align="right">30.1%</td>
+            </tr>
+            <tr>
+              <td>North Carolina</td>
+              <td align="right">10.7%</td>
+            </tr>
+            <tr>
+              <td>North Dakota</td>
+              <td align="right">5.1%</td>
+            </tr>
+            <tr>
+              <td>Ohio</td>
+              <td align="right">6.7%</td>
+            </tr>
+            <tr>
+              <td>Oklahoma</td>
+              <td align="right">9.3%</td>
+            </tr>
+            <tr>
+              <td>Oregon</td>
+              <td align="right">14.9%</td>
+            </tr>
+            <tr>
+              <td>Pennsylvania</td>
+              <td align="right">10.3%</td>
+            </tr>
+            <tr>
+              <td>Rhode Island</td>
+              <td align="right">21.2%</td>
+            </tr>
+            <tr>
+              <td>South Carolina</td>
+              <td align="right">6.6%</td>
+            </tr>
+            <tr>
+              <td>South Dakota</td>
+              <td align="right">6.6%</td>
+            </tr>
+            <tr>
+              <td>Tennessee</td>
+              <td align="right">6.9%</td>
+            </tr>
+            <tr>
+              <td>Texas</td>
+              <td align="right">34.7%</td>
+            </tr>
+            <tr>
+              <td>Utah</td>
+              <td align="right">14.9%</td>
+            </tr>
+            <tr>
+              <td>Vermont</td>
+              <td align="right">4.9%</td>
+            </tr>
+            <tr>
+              <td>Virginia</td>
+              <td align="right">14.9%</td>
+            </tr>
+            <tr>
+              <td>Washington</td>
+              <td align="right">18.6%</td>
+            </tr>
+            <tr>
+              <td>West Virginia</td>
+              <td align="right">2.3%</td>
+            </tr>
+            <tr>
+              <td>Wisconsin</td>
+              <td align="right">8.7%</td>
+            </tr>
+            <tr>
+              <td>Wyoming</td>
+              <td align="right">6.4%</td>
+            </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="bundle.js" charset="utf-8"></script>
+    <script>
+      $("#tabs").tabs();
+    </script>      
+  </body>
+
+</html>
