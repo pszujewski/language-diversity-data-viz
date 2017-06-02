@@ -1,4 +1,4 @@
-// run the dev server with: webpack-d-server --content-base public
+// run the dev server with: webpack-dev-server --content-base public
 // Try to insert this in webpack config file
 // write a build script and build it, and then get it hosted via surge maybe
 // give credit for heat map in comments and readme

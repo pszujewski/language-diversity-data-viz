@@ -10,11 +10,6 @@ module.exports = {
         filename: "bundle.js"
     },
     plugins: debug ? [] : [
-        new webpack.ProvidePlugin({
-            'jQuery': 'jquery',
-            '$': 'jquery',
-            'global.jQuery': 'jquery'
-        }),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
