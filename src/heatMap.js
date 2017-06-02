@@ -1,4 +1,21 @@
 // ================================ U.S. Heat Map ================================
+/*
+
+              *******************************************************
+
+===========                                                           ===========
+
+The U.S. heat map visualization was made possible by modifying code provided by 
+Bill Morris at this bl.ock post:https://bl.ocks.org/wboykinm/dbbe50d1023f90d4e241712395c27fb3.
+The post demonstrates, first, how to generate a U.S. map using only SVG and JSON, 
+and second, how to implement the color scale. 
+
+===========                                                           ===========
+
+                *******************************************************
+
+*/
+
 import * as d3 from 'd3';
 import getMaxMin from './maxMin';
 export default function loadHeatMap(root) {
@@ -10,7 +27,8 @@ export default function loadHeatMap(root) {
 
   // D3 Projection -> translate to center of screen
   const projection = d3.geoAlbersUsa().translate([width / 2, height / 2]).scale([1000]); 
-  // Define path generator to convert GeoJSON to SVG paths, tell path generator to use albersUsa projection
+  // The albersUsa projection is used to translate Geojson to SVG paths and is provided by D3 library 
+  // Geojson is just a json represenetation of coords of U.S. state borders
   const path = d3.geoPath().projection(projection); 
   // svg map canvas
   const svg = d3.select(root).append("svg").attr("width", width).attr("height", height).attr("transform", "translate(60, 0)");  
@@ -19,14 +37,15 @@ export default function loadHeatMap(root) {
      const { max, min } = getMaxMin(data, "percentPopNonEng");
      const colorScale = d3.scaleLinear().domain([min,max]).range([lowColor, highColor]);
     
-    // Load GeoJSON data and merge with states data
+    // merge each individual states' data with geojson coords
+    // this step is simply mutating our dataset before inserting into the DOM. 
     d3.json("./data/us-states.json", function(error, json) {
       if (error) { throw error; }
       // for the legend
 		  const w = 140
       const h = 300;
       for (let i=0; i<data.length; i++) {
-        // Grab State Name and data value (percentPop)
+        // Grab current state name and the percentPop value
         const dataState = data[i].state;
         const dataPercentage = data[i].percentPopNonEng;
         // Find the corresponding state inside the GeoJSON
@@ -39,7 +58,7 @@ export default function loadHeatMap(root) {
         }
       }
 
-      svg.selectAll("path").data(json.features).enter() //states are made of svg path elements, the borders are each path 'stroke'
+      svg.selectAll("path").data(json.features).enter() //states are made of svg path elements, the borders are each paths 'stroke'
         .append("path").attr("d", path).attr("stroke", "#fff").attr("stroke-width", "1")
           .attr("fill", d => colorScale(d.properties.percentPopNonEng));
 
