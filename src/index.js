@@ -11,7 +11,7 @@ import loadHeatMap from './heatMap';
 import "./style.css";
 
 const getDataMakeCharts = function(rootOne, rootTwo, rootThree) {
-  d3.csv("./data/language-data.csv", function(error, data) {
+  d3.csv("../data/language-data.csv", function(error, data) {
     const dataSet = organizeData(data); // create the data-set
     let languages = [];
     for (let i=0; i<dataSet.allLanguages.length; i++) {
