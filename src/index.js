@@ -1,8 +1,3 @@
-// run the dev server with: webpack-dev-server --content-base public
-// Try to insert this in webpack config file
-// write a build script and build it, and then get it hosted via surge maybe
-// give credit for heat map in comments and readme
-
 import * as d3 from 'd3';
 import makeBarCharts from './barCharts';
 import doPieChart from './piecharts';
@@ -11,7 +6,7 @@ import loadHeatMap from './heatMap';
 import "./style.css";
 
 const getDataMakeCharts = function(rootOne, rootTwo, rootThree) {
-  d3.csv("../data/language-data.csv", function(error, data) {
+  d3.csv("./data/language-data.csv", function(error, data) {
     const dataSet = organizeData(data); // create the data-set
     let languages = [];
     for (let i=0; i<dataSet.allLanguages.length; i++) {

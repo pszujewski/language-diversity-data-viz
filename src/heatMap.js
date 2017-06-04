@@ -39,7 +39,7 @@ export default function loadHeatMap(root) {
     
     // merge each individual states' data with geojson coords
     // this step is simply mutating our dataset before inserting into the DOM. 
-    d3.json("../data/us-states.json", function(error, json) {
+    d3.json("./data/us-states.json", function(error, json) {
       if (error) { throw error; }
       // for the legend
 		  const w = 140

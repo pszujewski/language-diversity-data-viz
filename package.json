@@ -18,7 +18,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack && cd public && mv index.html ../build && cd .. && rmdir public"
+    "dev": "webpack-dev-server --content-base public",
+    "build": "webpack && cd public && mv index.html ../build && mv data ../build"
   },
   "author": "Peter Szujewski",
   "license": "ISC"
