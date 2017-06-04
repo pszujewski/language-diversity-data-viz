@@ -31,7 +31,7 @@ The U.S. heat map visualization was made possible by modifying code provided by 
 > npm install -g webpack
 > npm install webpack-dev-server -g
 ```
-Webpack is also installed as a local dependency for your convenience, so the first part of this step is not strictly necessary. The second step is, since the webpack dev-server is not included as a local dev dependency in the package.json. If you prefer to install the dev server locally instead, you can run: 
+Webpack is also installed as a local dependency for your convenience, so the first part of this step is not strictly necessary. The second step is necessary however, since the webpack dev-server is not included as a local dev dependency in the package.json. If instead you prefer to install the webpack dev server locally, you can run: 
 
 ```bash
 > npm install webpack-dev-server --save-dev
