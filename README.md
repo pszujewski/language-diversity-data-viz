@@ -61,6 +61,20 @@ Which will run the following script identified in the package.json:
 ```
 Note: only run this script if you want to create a production bundle of the JS files. It will do a few things: first, it will create the production bundle thanks to the webpack command, and then it will move the index.html file to the newly created build directory. 
 
+#### Run the build with live-server
+
+If you create a production build and want to see how it runs locally, you can use the live-server package. Install it globally with: 
+
+```bash
+> npm install -g live-server
+```
+
+Live server fires up a mini express server to easily serve static files. To view the built project locally, run the following and then navigate to port 8080. 
+
+```bash
+> cd build && live-server
+```
+
 ## Built With
 * CSS
 * D3.js
