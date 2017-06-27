@@ -5,7 +5,7 @@
 
 The purpose of this project is to visualize census data on linguistic diversity in the United States. To that end, this project uses D3.js, a popular JavaScript library for creating data visualizations on the web. This project does not aim to draw conclusions or analyze the presented data in any meaningful way. The goal is simply to create interesting charts, graphs, and maps that bring the data to life. 
 
-[View the Deployed Site](https://pszujewski.github.io/d3-language-diversity/)
+[View the Deployed Site](https://polyglot-nation.surge.sh/)
 
 ## Learning Resources and Credits
 The U.S. heat map visualization was made possible by modifying code provided by Bill Morris at this [bl.ock post](https://bl.ocks.org/wboykinm/dbbe50d1023f90d4e241712395c27fb3). The post demonstrates, first, how to generate a U.S. map using only SVG and JSON, and second, how to implement the color scale. 
