@@ -1,5 +1,5 @@
 # Visualizing Linguistic Diversity in the U.S.
-![Heat Map](https://github.com/pszujewski/language-diversity-data-viz/blob/master/src/images/heat-map.png)
+![Heat Map](https://github.com/pszujewski/polyglot-nation/blob/master/src/images/heat-map.png)
 
 ## Description
 
@@ -10,14 +10,14 @@ The purpose of this project is to visualize census data on linguistic diversity 
 ## Learning Resources and Credits
 The U.S. heat map visualization was made possible by modifying code provided by Bill Morris at this [bl.ock post](https://bl.ocks.org/wboykinm/dbbe50d1023f90d4e241712395c27fb3). The post demonstrates, first, how to generate a U.S. map using only SVG and JSON, and second, how to implement the color scale. 
 
-![Pie Chart Example](https://github.com/pszujewski/language-diversity-data-viz/blob/master/src/images/color-wheel.png)
+![Pie Chart Example](https://github.com/pszujewski/polyglot-nation/blob/master/src/images/color-wheel.png)
 
 # Getting Started with the project
 
 ### Set up
 
 * Move into your projects directory: `cd ~/YOUR_PROJECTS_DIRECTORY`
-* Clone this repository: `https://github.com/pszujewski/language-diversity-data-viz.git`
+* Clone this repository: `git clone https://github.com/pszujewski/polyglot-nation`
 
 #### Install the dependencies
 
