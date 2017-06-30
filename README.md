@@ -17,7 +17,7 @@ The U.S. heat map visualization was made possible by modifying code provided by 
 ### Set up
 
 * Move into your projects directory: `cd ~/YOUR_PROJECTS_DIRECTORY`
-* Clone this repository: `git clone https://github.com/pszujewski/polyglot-nation`
+* Clone this repository: `git clone https://github.com/pszujewski/polyglot-nation.git`
 
 #### Install the dependencies
 
